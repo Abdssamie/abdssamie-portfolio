@@ -1,0 +1,380 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #111111;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============================================================
+   FLOATING NAV
+   ============================================================ */
+.top-nav {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  gap: 12px;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.top-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #777;
+  transition: all 0.3s ease;
+}
+
+.top-nav a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* ============================================================
+   MAIN LAYOUT (Bulletproof Flexbox)
+   ============================================================ */
+.layout {
+  display: flex;
+  width: 88%; /* Guarantees side whitespace at any zoom level */
+  max-width: 980px; /* Reduced to push profile card significantly to the right */
+  margin: 0 auto;
+  align-items: flex-start;
+  position: relative;
+  gap: 50px; /* Reduced gap to balance the narrower text column */
+}
+
+/* ============================================================
+   SIDEBAR & PROFILE CARD
+   ============================================================ */
+.sidebar {
+  width: 320px; /* Slightly narrower to match the tighter layout */
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start; /* Align to top instead of center */
+  justify-content: center;
+  padding-top: 140px; /* Fixed clearance from the header, matching the hero text */
+}
+
+.profile-card {
+  background: #ffffff;
+  color: #111111;
+  width: 100%;
+  border-radius: 20px;
+  padding: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.photo-wrapper {
+  width: 100%;
+  height: 300px;
+  background-color: #e85d04;
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(1) contrast(1.1);
+  mix-blend-mode: luminosity;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-top: 20px;
+  letter-spacing: -0.5px;
+}
+
+.flame-icon {
+  width: 36px;
+  height: 36px;
+  background: #e85d04;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+  box-shadow: 0 4px 15px rgba(232, 93, 4, 0.4);
+}
+.flame-icon svg { width: 16px; height: 16px; }
+
+.bio {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  padding: 0 24px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  background: #f4f4f4;
+  color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.social-btn svg { width: 16px; height: 16px; }
+
+.social-btn:hover {
+  background: #e85d04;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   RIGHT CONTENT AREA
+   ============================================================ */
+.content {
+  flex: 1;
+  min-width: 0; /* Prevents flex blowout */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align to top instead of center */
+  padding-top: 140px; /* Exact same clearance as sidebar so tops align perfectly */
+  position: relative;
+}
+
+.huge-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  letter-spacing: -3px;
+  margin-bottom: 30px;
+}
+
+.text-white {
+  font-size: clamp(4rem, 6.5vw, 6.5rem);
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.text-dark {
+  font-size: clamp(4rem, 6.5vw, 6.5rem);
+  font-weight: 900;
+  color: #333333;
+}
+
+.hero-text {
+  color: #888888;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 60px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-num {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.stat-lbl {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #666666;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+.projects-section {
+  padding-top: 100px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  padding: 32px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+}
+.icon-box svg { width: 24px; height: 24px; }
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.card p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Specific Card Colors */
+.card-orange {
+  background-color: #e85d04;
+  color: #fff;
+}
+
+.card-lime {
+  background-color: #c6f135;
+  color: #111;
+}
+.card-lime .icon-box {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.card-dark {
+  background-color: #1c1c1c;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-brown {
+  background-color: #1f1308;
+  color: #fff;
+  border: 1px solid rgba(232, 93, 4, 0.2);
+}
+.card-brown .icon-box {
+  color: #e85d04;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 992px) {
+  .layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 100px 20px 40px 20px;
+  }
+  
+  .profile-card {
+    max-width: 380px;
+  }
+  
+  .content {
+    width: 100%;
+    padding: 40px 20px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .stats-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
