@@ -124,7 +124,7 @@ a {
 .card-image-box {
   width: 100%;
   aspect-ratio: 1 / 1.1;
-  background: linear-gradient(180deg, #55aaff 0%, #0077ff 100%);
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 24px;
@@ -199,7 +199,7 @@ a {
 }
 
 .card-social-link {
-  color: #55aaff;
+  color: #2563eb;
   transition: transform 0.2s ease, opacity 0.2s ease;
   display: flex;
   align-items: center;
@@ -345,9 +345,9 @@ a {
 }
 
 /* Specific Card Colors */
-.card-orange {
-  background-color: #e85d04;
-  color: #fff;
+.card-blue {
+  background-color: #2563eb;
+  color: #ffffff;
 }
 
 .card-lime {
@@ -367,10 +367,10 @@ a {
 .card-brown {
   background-color: #1f1308;
   color: #fff;
-  border: 1px solid rgba(232, 93, 4, 0.2);
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 .card-brown .icon-box {
-  color: #e85d04;
+  color: #2563eb;
 }
 
 /* ============================================================
@@ -419,7 +419,7 @@ a {
 
 .skill-level {
   height: 100%;
-  background: #e85d04;
+  background: #2563eb;
   border-radius: 4px;
 }
 
