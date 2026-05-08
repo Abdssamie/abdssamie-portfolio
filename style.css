@@ -28,8 +28,8 @@ a {
    FLOATING NAV
    ============================================================ */
 .top-nav {
-  position: fixed;
-  top: 24px;
+  position: absolute;
+  top: 40px; /* Slightly lower to clear the top edge nicely */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(30, 30, 30, 0.85);
@@ -74,7 +74,7 @@ a {
   width: 88%; /* Guarantees side whitespace at any zoom level */
   max-width: 980px; /* Reduced to push profile card significantly to the right */
   margin: 0 auto;
-  align-items: flex-start;
+  align-items: stretch; /* Allows sidebar to span full height for stickiness */
   position: relative;
   gap: 50px; /* Reduced gap to balance the narrower text column */
 }
@@ -84,20 +84,18 @@ a {
    ============================================================ */
 .sidebar {
   width: 320px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  padding-top: 140px; /* Aligns card with hero title at the very start */
 }
 
 .sticky-profile-card {
   background-color: #ffffff;
   width: 100%;
   border-radius: 16px;
-  position: relative;
+  position: sticky; 
+  top: 40px; /* Stays close to the top when scrolling to show the full card */
   display: flex;
   flex-direction: column;
   padding: 30px 24px;
