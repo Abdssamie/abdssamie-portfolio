@@ -107,9 +107,9 @@ a {
 /* Decorative SVG Vectors */
 .decoration-top {
   position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 160px;
+  top: -20px;
+  left: -35px;
+  width: 220px;
   height: auto;
   z-index: 2;
   pointer-events: none;
@@ -124,7 +124,7 @@ a {
 .card-image-box {
   width: 100%;
   aspect-ratio: 1 / 1.1;
-  background: linear-gradient(180deg, #ff7a00 0%, #e85d04 100%);
+  background: linear-gradient(180deg, #55aaff 0%, #0077ff 100%);
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 24px;
@@ -157,18 +157,18 @@ a {
 .arc-wrapper {
   position: relative;
   width: 100%;
-  height: 40px; /* even more compact */
-  margin: 10px 0;
+  height: 85px; /* Balanced gap */
+  margin: 0;
   display: flex;
   align-items: center;
 }
 
 .decoration-bottom {
   position: absolute;
-  left: -50px; /* Shifted significantly left to come out of the side */
-  width: 270px;
-  height: 166px;
-  transform: scale(0.5); 
+  left: -165px; /* Balanced position between previous two attempts */
+  width: 290px;
+  height: 190px;
+  transform: scale(0.85);
   transform-origin: left center;
   z-index: 2;
   pointer-events: none;
@@ -199,7 +199,7 @@ a {
 }
 
 .card-social-link {
-  color: #ff7a00;
+  color: #55aaff;
   transition: transform 0.2s ease, opacity 0.2s ease;
   display: flex;
   align-items: center;
