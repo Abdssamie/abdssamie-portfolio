@@ -598,6 +598,29 @@ a {
   color: #888888;
   line-height: 1.6;
   max-width: 700px;
+  margin-bottom: 16px;
+}
+
+.thought-desc strong {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.thought-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #1a1a1a;
+  color: #f97316;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .thought-meta {
