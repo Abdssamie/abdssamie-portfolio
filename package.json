@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "wrangler pages deploy dist",
+    "optimize:images": "node scripts/optimize.mjs"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.4.1",
+    "astro": "^5.7.9"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
