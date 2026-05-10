@@ -1,0 +1,44 @@
+image: node:22
+
+stages:
+  - build
+  - deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+install-deps:
+  stage: .pre
+  script:
+    - bun install
+  cache:
+    key: bun-${CI_COMMIT_SHORT_SHA}
+    paths:
+      - .bun
+  artifacts:
+    paths:
+      - node_modules/
+      - .bun/
+    expire_in: 1 hour
+
+build:
+  stage: build
+  needs: [install-deps]
+  script:
+    - bun run build
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 week
+  allow_failure: false
+
+deploy:
+  stage: deploy
+  needs: [build]
+  script:
+    - bun run deploy
+  environment:
+    name: production
+  only:
+    - main
+  allow_failure: false
