@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Globe from '../components/lightswind/globe.tsx';
+---
+
+<Layout>
+  <Navigation />
+  <div class="layout">
+    <main class="content">
+      <section id="home" class="hero-section text-center">
+        <h1 class="hero-main-title">
+          TALENT MANAGEMENT | INFLUENCER MATCHMAKING<br/>
+          EVENT & HOSPITALITY ACTIVATIONS
+        </h1>
+        
+        <div class="globe-container">
+          <Globe 
+            client:load 
+            baseColor="#ffffff"
+            markerColor="#ffffff"
+            glowColor="#161616"
+            mapBrightness={8}
+            mapSamples={52000}
+            diffuse={1.45}
+            dark={1}
+            scale={1}
+          />
+        </div>
+
+        <section class="partners-strip" aria-label="Our partners">
+          <div class="partners-label">OUR PARTNERS</div>
+          <div class="partners-marquee">
+            <div class="partners-track">
+              <span class="partners-set">
+                <span class="partner-logo partner-evapify">evapify</span>
+                <span class="partner-logo partner-bomber">BOMB3R</span>
+                <span class="partner-logo partner-saily">Saily</span>
+                <span class="partner-logo partner-juicefast">JUICEFAST</span>
+                <span class="partner-logo partner-crystal">CRYSTAL</span>
+              </span>
+              <span class="partners-set" aria-hidden="true">
+                <span class="partner-logo partner-evapify">evapify</span>
+                <span class="partner-logo partner-bomber">BOMB3R</span>
+                <span class="partner-logo partner-saily">Saily</span>
+                <span class="partner-logo partner-juicefast">JUICEFAST</span>
+                <span class="partner-logo partner-crystal">CRYSTAL</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <div class="stats-row justify-center mt-20">
+          <div class="stat-item">
+            <span class="stat-num">+4</span>
+            <span class="stat-lbl">YEARS OF<br>EXPERIENCE</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">+46</span>
+            <span class="stat-lbl">PROJECTS<br>COMPLETED</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">+20</span>
+            <span class="stat-lbl">WORLDWIDE<br>CLIENTS</span>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <ServiceCard 
+            title="CRM & ERP<br>SOLUTIONS"
+            icon="layout-dashboard"
+            techs={[
+              { name: "Twenty CRM", icon: "/twenty.png", isLocal: true },
+              { name: "ERPNext", icon: "https://cdn.simpleicons.org/erpnext/0089FF" },
+              { name: "Salesforce", icon: "https://img.icons8.com/?id=38804&format=png&size=96" }
+            ]}
+          />
+          
+          <ServiceCard 
+            title="AI WORKFLOWS &<br>AUTOMATIONS"
+            icon="workflow"
+            techs={[
+              { name: "Claude", icon: "https://cdn.simpleicons.org/claude/D97757" },
+              { name: "ChatGPT", icon: "https://img.icons8.com/?id=TUk7vxvtu6hX&format=png&size=96" },
+              { name: "n8n", icon: "https://cdn.simpleicons.org/n8n/EA4B71" },
+              { name: "Make.com", icon: "https://cdn.simpleicons.org/make/6D00CC" }
+            ]}
+          />
+          
+          <ServiceCard 
+            title="FULL STACK<br>APPLICATIONS"
+            icon="layers"
+            techs={[
+              { name: "TypeScript", icon: "https://img.icons8.com/?id=uJM6fQYqDaZK&format=png&size=96" },
+              { name: "React", icon: "https://img.icons8.com/?id=123603&format=png&size=96" },
+              { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
+              { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+              { name: "Convex", icon: "/convex.svg", isLocal: true }
+            ]}
+          />
+          
+          <ServiceCard 
+            title="CLOUD<br>INFRASTRUCTURE"
+            icon="cpu"
+            techs={[
+              { name: "Docker", icon: "https://img.icons8.com/?id=22813&format=png&size=96" },
+              { name: "Linux", icon: "https://img.icons8.com/?id=17842&format=png&size=96" },
+              { name: "AWS", icon: "https://img.icons8.com/?id=33039&format=png&size=96" },
+              { name: "Postgres", icon: "https://img.icons8.com/?id=38561&format=png&size=96" }
+            ]}
+          />
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <h2 class="huge-title">
+          <span class="text-white">RECENT</span>
+          <span class="text-dark">PROJECTS</span>
+        </h2>
+        
+        <div class="projects-list">
+          <a href="#contact" class="project-item">
+            <div class="project-img-box" style="background: #fff;">
+              <img src="/bloomshine-logo.svg" alt="Bloomshine" />
+            </div>
+            <div class="project-info">
+              <h3>Enterprise CRM &amp; Automation</h3>
+              <p>Custom-built operational engine for Bloomshine Agency, automating lead lifecycle and high-latency data workflows.</p>
+            </div>
+            <div class="project-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+
+          <a href="https://convex-zen-web-abdssamie.abdessamie-elmoubarki.workers.dev/" target="_blank" rel="noopener" class="project-item">
+            <div class="project-img-box" style="background: #111;">
+              <img src="/convex.svg" alt="Convex" />
+            </div>
+            <div class="project-info">
+              <h3>Convex Zen</h3>
+              <p>An opinionated SaaS starter built with Convex and TanStack. Includes pre-configured auth, billing, and email to get you from zero to production.</p>
+            </div>
+            <div class="project-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+
+          <a href="https://github.com/abdssamie/dwsim" target="_blank" rel="noopener" class="project-item">
+            <div class="project-img-box" style="background: #065f46;">
+              <img src="/enerflow.png" alt="Enerflow" />
+            </div>
+            <div class="project-info">
+              <h3>Enerflow</h3>
+              <p>Command-driven headless simulation engine built on DWSIM, exposed via ServiceStack Web API. Enables external systems to instantiate flowsheets, manipulate states, and stream solver logs in real-time via SSE.</p>
+            </div>
+            <div class="project-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="thoughts" class="thoughts-section">
+        <h2 class="huge-title">
+          <span class="text-white">LATEST</span>
+          <span class="text-dark">WRITINGS</span>
+        </h2>
+
+        <div class="thoughts-list">
+          <article class="thought-item">
+            <a href="/thought-openspec.html" class="thought-link">
+              <div class="thought-header">
+                <h3>Building Reliable Software Fast with OpenSpec and Agentic Project Management</h3>
+                <div class="thought-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+              <p class="thought-desc">How to tame the chaos of AI coding by using spec-driven development and agentic workflows.</p>
+              <div class="thought-meta">
+                <span class="thought-date">Jan 24, 2026</span>
+                <span class="thought-read">5min read</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="thought-item">
+            <a href="/thought-prisma-drizzle.html" class="thought-link">
+              <div class="thought-header">
+                <h3>Why I Switched from Prisma to Drizzle</h3>
+                <div class="thought-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+              <p class="thought-desc">A journey from Prisma's heavy engine to Drizzle's lightweight speed, and solving Vercel cold start errors.</p>
+              <div class="thought-meta">
+                <span class="thought-date">Dec 28, 2025</span>
+                <span class="thought-read">4min read</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <h2 class="huge-title">
+          <span class="text-white">LET'S WORK</span>
+          <span class="text-dark">TOGETHER</span>
+        </h2>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+          <input type="hidden" name="access_key" value="6378112d-7d32-4a72-b23a-3662284101fb">
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Your@email.com" required />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="budget">Budget</label>
+            <select name="budget" id="budget">
+              <option value="" disabled selected>Select...</option>
+              <option value="< $1k">&lt; $1k</option>
+              <option value="$1k - $5k">$1k - $5k</option>
+              <option value="$5k+">$5k+</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          
+          <button type="submit" class="contact-btn">Submit</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <blockquote class="footer-quote">
+        "Software is an investment. I make sure it pays off."
+      </blockquote>
+      <a href="#contact" class="footer-cta">Work with me</a>
+    </div>
+  </footer>
+</Layout>
