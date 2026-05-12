@@ -7,3 +7,41 @@
     @apply bg-black text-neutral-400 font-inter;
   }
 }
+
+@layer components {
+  .ticker-bar {
+    @apply fixed top-0 left-0 w-full bg-[#2563eb] text-white overflow-hidden py-2 z-[200] font-inter text-[13px] font-bold tracking-[0.08em] whitespace-nowrap;
+  }
+
+  .ticker-track {
+    @apply flex w-max;
+    animation: scroll-ticker 180s linear infinite;
+    will-change: transform;
+  }
+
+  .ticker-set {
+    @apply inline-flex items-center;
+  }
+
+  .ticker-item {
+    @apply inline-flex items-center pr-[clamp(34px,3.8vw,72px)];
+  }
+
+  .ticker-item::after {
+    content: "♦";
+    @apply inline-block ml-[clamp(34px,3.8vw,72px)] opacity-90;
+  }
+}
+
+@keyframes scroll-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

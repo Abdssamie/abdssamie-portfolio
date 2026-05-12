@@ -1,0 +1,19 @@
+---
+const tickerItems = [
+  "REVOLUTIONIZING MARKETING SINCE 2020",
+  "THE NEW WAY OF MARKETING",
+  "CONNECTING BRANDS WITH OVER 200+ AUTHENTIC CREATORS",
+];
+const tickerLoop = Array.from({ length: 4 }, () => tickerItems).flat();
+---
+
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span class="ticker-set">
+      {tickerLoop.map((item) => <span class="ticker-item">{item}</span>)}
+    </span>
+    <span class="ticker-set" aria-hidden="true">
+      {tickerLoop.map((item) => <span class="ticker-item">{item}</span>)}
+    </span>
+  </div>
+</div>
