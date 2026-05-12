@@ -10,7 +10,7 @@
 
 @layer components {
   .ticker-bar {
-    @apply fixed top-0 left-0 w-full bg-[#2563eb] text-white overflow-hidden py-2 z-[200] font-inter text-[13px] font-bold tracking-[0.08em] whitespace-nowrap;
+    @apply absolute top-0 left-0 w-full bg-[#2563eb] text-white overflow-hidden py-2 z-[200] font-inter text-[13px] font-bold tracking-[0.08em] whitespace-nowrap;
   }
 
   .ticker-track {
