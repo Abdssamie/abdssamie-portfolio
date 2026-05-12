@@ -96,27 +96,15 @@ import AnimatedSection from '../components/AnimatedSection';
               </div>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div class="space-y-2">
-                <label for="email" class="text-sm uppercase tracking-widest font-bold text-neutral-300">Email</label>
-                <input type="email" name="email" id="email" required class="w-full bg-neutral-900 border border-neutral-800 p-4 text-white focus:outline-none focus:border-white transition-colors" placeholder="Your@email.com" />
-              </div>
-              <div class="space-y-2">
-                <label for="budget" class="text-sm uppercase tracking-widest font-bold text-neutral-300">Budget</label>
-                <select name="budget" id="budget" required class="w-full bg-neutral-900 border border-neutral-800 p-4 text-white focus:outline-none focus:border-white transition-colors appearance-none">
-                  <option value="" disabled selected>Select Budget Range...</option>
-                  <option value="< $1k">&lt; $1k</option>
-                  <option value="$1k - $5k">$1k - $5k</option>
-                  <option value="$5k+">$5k+</option>
-                </select>
-              </div>
+            <div class="space-y-2">
+              <label for="email" class="text-sm uppercase tracking-widest font-bold text-neutral-300">Email</label>
+              <input type="email" name="email" id="email" required class="w-full bg-neutral-900 border border-neutral-800 p-4 text-white focus:outline-none focus:border-white transition-colors" placeholder="Your@email.com" />
             </div>
-            
+
             <div class="space-y-2">
               <label for="message" class="text-sm uppercase tracking-widest font-bold text-neutral-300">Message</label>
               <textarea name="message" id="message" rows="5" required class="w-full bg-neutral-900 border border-neutral-800 p-4 text-white focus:outline-none focus:border-white transition-colors" placeholder="Tell us about your brand and objectives"></textarea>
-            </div>
-            
+            </div>            
             <button type="submit" class="w-full bg-white text-black py-5 text-xl font-bold hover:bg-neutral-200 transition-colors uppercase tracking-widest">
               Send Message
             </button>
