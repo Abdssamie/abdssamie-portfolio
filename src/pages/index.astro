@@ -1,33 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
-import ProfileCard from '../components/ProfileCard.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import Globe from '../components/lightswind/globe.tsx';
 ---
 
 <Layout>
   <Navigation />
-  
   <div class="layout">
-    <aside class="sidebar">
-      <ProfileCard 
-        name="Abdssamie"
-        bio="Helping businesses scale through strategic engineering and high-performance software systems."
-        imagePath="/profile.png"
-      />
-    </aside>
-
     <main class="content">
-      <section id="home" class="hero-section">
-        <h1 class="huge-title">
-          <span class="text-white">PRODUCT</span>
-          <span class="text-dark">ENGINEER</span>
+      <section id="home" class="hero-section text-center">
+        <h1 class="hero-main-title">
+          TALENT MANAGEMENT | INFLUENCER MATCHMAKING<br/>
+          EVENT & HOSPITALITY ACTIVATIONS
         </h1>
-        <p class="hero-text">
-          I build high-performance software systems that turn complex challenges into measurable business value.
-        </p>
         
-        <div class="stats-row">
+        <div class="globe-container">
+          <Globe 
+            client:load 
+            baseColor="#ffffff"
+            markerColor="#ffffff"
+            glowColor="#161616"
+            mapBrightness={8}
+            mapSamples={52000}
+            diffuse={1.45}
+            dark={1}
+            scale={1}
+          />
+        </div>
+
+        <section class="partners-strip" aria-label="Our partners">
+          <div class="partners-label">OUR PARTNERS</div>
+          <div class="partners-marquee">
+            <div class="partners-track">
+              <span class="partners-set">
+                <span class="partner-logo partner-evapify">evapify</span>
+                <span class="partner-logo partner-bomber">BOMB3R</span>
+                <span class="partner-logo partner-saily">Saily</span>
+                <span class="partner-logo partner-juicefast">JUICEFAST</span>
+                <span class="partner-logo partner-crystal">CRYSTAL</span>
+              </span>
+              <span class="partners-set" aria-hidden="true">
+                <span class="partner-logo partner-evapify">evapify</span>
+                <span class="partner-logo partner-bomber">BOMB3R</span>
+                <span class="partner-logo partner-saily">Saily</span>
+                <span class="partner-logo partner-juicefast">JUICEFAST</span>
+                <span class="partner-logo partner-crystal">CRYSTAL</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <div class="stats-row justify-center mt-20">
           <div class="stat-item">
             <span class="stat-num">+4</span>
             <span class="stat-lbl">YEARS OF<br>EXPERIENCE</span>
